@@ -9,7 +9,7 @@ using namespace std;
 #include <opengl\include\GLFW\glfw3.h>
 
 //Function Prototype
-void key_callback(GLFWwindow);
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 
 const GLchar* vertexShaderSource = "#version 330 core\n"
 "layout (location =0 ) in vec3 position;\n"
@@ -139,4 +139,10 @@ void main()
 		//swap the screen buffers
 		glfwSwapBuffers(window);
 	}
+}
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
+{
+	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+		glfwSetWindowShouldClose(window, GL_TRUE);
 }
