@@ -17,16 +17,16 @@ const GLchar* vertexShaderSource = "#version 330 core\n"
 "out vec3 ourColor;\n"
 "void main()\n"
 "{\n"
-"gl_Position= vec4(position.x, position.y, position.z, 1.0);\n"
+"gl_Position= vec4(position.x, position.y, position.z, 1.0f);\n"
 "ourColor = color;\n"
 "}\0";
 
 const GLchar* fragmentShaderSource = "#version 330 core\n"
-"in vec3 ourColor\n"
+"in vec3 ourColor;\n"
 "out vec4 color;\n"
 "void main()\n"
 "{\n"
-"color = vec4 (ourColor 1.0f);\n"
+"color = vec4 (ourColor, 1.0f);\n"
 "}\n\0";
 
 void main()
