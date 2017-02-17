@@ -104,9 +104,9 @@ void main()
 	//Set each vertices of the triangle
 	GLfloat vertices[] =
 	{
-		-0.5f, -0.5f, 0.0f,
-		0.5f, -0.5f, 0.0f,
-		0.0f, 0.5f, 0.0f
+		-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
+		0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f
 	};
 
 	//Setup pointer array and buffer
