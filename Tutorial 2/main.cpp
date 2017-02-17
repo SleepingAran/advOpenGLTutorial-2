@@ -119,4 +119,24 @@ void main()
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
+
+	while (!glfwWindowShouldClose(window))
+	{
+		//Check if any event activated
+		glfwPollEvents();
+		
+		//Render
+		//Clear the colorbuffer
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		//draw triangle
+		glUseProgram(shaderProgram);
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glBindVertexArray(0);
+
+		//swap the screen buffers
+		glfwSwapBuffers(window);
+	}
 }
